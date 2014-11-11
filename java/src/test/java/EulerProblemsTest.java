@@ -16,6 +16,6 @@ public class EulerProblemsTest {
 
     @Test
     public void testProblem3() {
-        assertThat(EulerProblems.answer3(), is(6857);
+        assertThat(EulerProblems.answer3(), is(6857L));
     }
 }
