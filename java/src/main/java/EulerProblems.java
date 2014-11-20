@@ -112,8 +112,31 @@ public class EulerProblems {
         System.out.format("%.0f\n", answer);
         return answer;
     }
+    
+    public static int answer7() {
+        boolean[] isPrime = new boolean[200000];
+        for (int i=0; i<isPrime.length; i++) {
+            isPrime[i] = true;
+        }
+        int numberOfPrimesFound=0;
+        int wantedPrime = 0;
+        for (int i=2; i < isPrime.length; i++) {
+            if (isPrime[i]) {
+                if (numberOfPrimesFound == 10000) {
+                    System.out.println(numberOfPrimesFound);
+                    System.out.println(i);
+                    return i;
+                }
+                numberOfPrimesFound++;
+                for (int j=i+i; j<isPrime.length; j+=i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+        return 0;
+    }
 
     public static void main(String[] args) {
-        answer6();
+        answer7();
     }
 }
